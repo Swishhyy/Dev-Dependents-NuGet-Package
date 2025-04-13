@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Exiled.Dev.References</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <authors>Swishhyy</authors>
     <owners>Swishhyy</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -18,7 +18,7 @@
   </metadata>
   <files>
     <!-- Include all DLLs except Assembly-CSharp related ones -->
-    <file src="binLibrary\*.dll" target="lib\net48" exclude="binLibrary\Assembly-CSharp*.dll" />
+    <file src="binLibrary\*.dll" target="lib\net48" exclude="binLibrary\Assembly-CSharp.dll" />
     <!-- Include the README.md file in the package -->
     <file src="..\README.md" target="docs\" />
   </files>

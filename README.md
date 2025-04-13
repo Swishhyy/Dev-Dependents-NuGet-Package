@@ -26,8 +26,9 @@ Once installed, all necessary DLLs will be available to your project. You can th
 
 This package includes all the necessary DLLs for Exiled development, including:
 
+#### WARNING: (Assembly-CSharp.dll & Assmebly-CSharp-Publicized.dll excluded to avoid conflicts)
 ### Core References
-- Assembly-CSharp-firstpass.dll (Assembly-CSharp DLLs excluded to avoid conflicts)
+- Assembly-CSharp-firstpass.dll 
 - BouncyCastle.Cryptography.dll
 - Caress.dll
 - CommandSystem.Core.dll
