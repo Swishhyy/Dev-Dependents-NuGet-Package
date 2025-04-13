@@ -26,14 +26,13 @@ jobs:
       - name: Build and Pack NuGet Package
         run: |
           dotnet build -c Release Exiled.Dev.References/Exiled.Dev.References.csproj
-          dotnet pack -c Release Exiled.Dev.References/Exiled.Dev.References.csproj --output ./nupkg
         
       - name: Push to NuGet
         if: github.event_name != 'pull_request'
         run: |
-          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet nuget push "${{ github.workspace }}/nupkg/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
           
       - name: Push to GitHub Packages
         if: github.event_name != 'pull_request'
         run: |
-          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.PUBLISHING_KEY }} --source "github" --skip-duplicate
+          dotnet nuget push "${{ github.workspace }}/nupkg/*.nupkg" --api-key ${{ secrets.PUBLISHING_KEY }} --source "github" --skip-duplicate
