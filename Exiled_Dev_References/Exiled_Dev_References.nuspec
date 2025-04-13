@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Exiled.Dev.References</id>
+    <version>1.0.0</version>
+    <authors>Swishhyy</authors>
+    <owners>Swishhyy</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Swishhyy/Dev-Dependents-NuGet-Package</projectUrl>
+    <description>NuGet Package for Exiled Plugin Development. This contains all .dlls you will need.</description>
+    <tags>exiled plugin development dll libraries</tags>
+  </metadata>
+  <files>
+    <!-- This file entry takes all DLLs from the binLibrary folder and places them into the lib folder -->
+    <file src="binLibrary\*.dll" target="lib\net45" />
+  </files>
+</package>
