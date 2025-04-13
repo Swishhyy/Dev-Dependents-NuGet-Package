@@ -19,6 +19,10 @@ jobs:
         with:
           dotnet-version: 8.0.x
       
+      - name: Configure NuGet for GitHub Packages
+        run: |
+          dotnet nuget add source --username Swishhyy --password ${{ secrets.GITHUB_PAT }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Swishhyy/index.json"
+      
       - name: Build and Pack NuGet Package
         run: |
           dotnet build -c Release Exiled.Dev.References/Exiled.Dev.References.csproj
@@ -31,4 +35,4 @@ jobs:
       - name: Push to GitHub Packages
         if: github.event_name != 'pull_request'
         run: |
-          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --skip-duplicate
+          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.GITHUB_PAT }} --source "github" --skip-duplicate

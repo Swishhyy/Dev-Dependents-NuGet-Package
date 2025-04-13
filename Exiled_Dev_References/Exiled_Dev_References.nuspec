@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Exiled.Dev.References</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Swishhyy</authors>
     <owners>Swishhyy</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,10 +12,13 @@
     <readme>docs\README.md</readme>
     <tags>exiled plugin development dll libraries</tags>
     <repository type="git" url="https://github.com/Swishhyy/Exiled_Dev_References.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+    </dependencies>
   </metadata>
   <files>
     <!-- This file entry takes all DLLs from the binLibrary folder and places them into the lib folder -->
-    <file src="binLibrary\*.dll" target="lib\net45" />
+    <file src="binLibrary\*.dll" target="lib\net48" />
     <!-- Include the README.md file in the package -->
     <file src="..\README.md" target="docs\" />
   </files>
