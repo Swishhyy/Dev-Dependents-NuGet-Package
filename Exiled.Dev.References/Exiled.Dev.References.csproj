@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>8.0</LangVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NuspecFile>..\Exiled_Dev_References\Exiled_Dev_References.nuspec</NuspecFile>
+    <PackageOutputPath>..\nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(MSBuildProjectDirectory)\..\Exiled_Dev_References\binLibrary\*.dll" />
+  </ItemGroup>
+
+</Project>
