@@ -11,7 +11,32 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="$(MSBuildProjectDirectory)\..\Exiled_Dev_References\binLibrary\*.dll" />
+    <!-- Explicitly reference Assembly-CSharp-Publicized.dll and exclude the regular Assembly-CSharp.dll -->
+    <Reference Include="Assembly-CSharp-Publicized">
+      <HintPath>..\Exiled_Dev_References\binLibrary\Assembly-CSharp-Publicized.dll</HintPath>
+    </Reference>
+    
+    <!-- Reference all other DLLs except for Assembly-CSharp.dll -->
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\Exiled_Dev_References\binLibrary\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    
+    <!-- All remaining DLL references except the conflicting ones -->
+    <Reference Include="BouncyCastle.Cryptography">
+      <HintPath>..\Exiled_Dev_References\binLibrary\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Caress">
+      <HintPath>..\Exiled_Dev_References\binLibrary\Caress.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandSystem.Core">
+      <HintPath>..\Exiled_Dev_References\binLibrary\CommandSystem.Core.dll</HintPath>
+    </Reference>
+    
+    <!-- Reference all other DLLs in the directory except the Assembly-CSharp.dll -->
+    <Reference Include="$(MSBuildProjectDirectory)\..\Exiled_Dev_References\binLibrary\*.dll" 
+              Exclude="$(MSBuildProjectDirectory)\..\Exiled_Dev_References\binLibrary\Assembly-CSharp.dll;
+                       $(MSBuildProjectDirectory)\..\Exiled_Dev_References\binLibrary\Assembly-CSharp-Publicized.dll;
+                       $(MSBuildProjectDirectory)\..\Exiled_Dev_References\binLibrary\Assembly-CSharp-firstpass.dll" />
   </ItemGroup>
 
 </Project>
