@@ -1,0 +1,28 @@
+name: NuGet Publish
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish NuGet Package
+        uses: brandedoutcast/publish-nuget@v2.5.5
+        with:
+          PROJECT_FILE_PATH: path/to/your/project.csproj   # Specify your project's file path
+          PACKAGE_NAME: Exiled_Dev_References
+          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}           # API key stored in repo secrets
+          NUGET_SOURCE: https://api.nuget.org               # Optional if publishing to nuget.org
+          # VERSION_FILE_PATH: path/to/version/file          # Uncomment and modify if needed
+          # VERSION_REGEX: '^\s*<Version>(.*)<\/Version>\s*$' # Uncomment if you need custom version parsing
+          # TAG_COMMIT: true                                 # Default is true
+          # TAG_FORMAT: v*                                   # Default tag format
+          # INCLUDE_SYMBOLS: true                            # Uncomment if you plan to include symbols
