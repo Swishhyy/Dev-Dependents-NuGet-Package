@@ -7,10 +7,11 @@
     <owners>Swishhyy</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <projectUrl>https://github.com/Swishhyy/Dev-Dependents-NuGet-Package</projectUrl>
+    <projectUrl>https://github.com/Swishhyy/Exiled_Dev_References</projectUrl>
     <description>NuGet Package for Exiled Plugin Development. This contains all .dlls you will need.</description>
     <readme>docs\README.md</readme>
     <tags>exiled plugin development dll libraries</tags>
+    <repository type="git" url="https://github.com/Swishhyy/Exiled_Dev_References.git" />
   </metadata>
   <files>
     <!-- This file entry takes all DLLs from the binLibrary folder and places them into the lib folder -->
