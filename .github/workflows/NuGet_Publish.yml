@@ -21,7 +21,8 @@ jobs:
       
       - name: Configure NuGet for GitHub Packages
         run: |
-          dotnet nuget add source --username Swishhyy --password ${{ secrets.GITHUB_PAT }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Swishhyy/index.json"
+          dotnet nuget add source --username Swishhyy --password ${{ secrets.PUBLISHING_KEY }} \
+          --name github "https://nuget.pkg.github.com/Swishhyy/index.json"
       
       - name: Build and Pack NuGet Package
         run: |
@@ -35,4 +36,4 @@ jobs:
       - name: Push to GitHub Packages
         if: github.event_name != 'pull_request'
         run: |
-          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.GITHUB_PAT }} --source "github" --skip-duplicate
+          dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.PUBLISHING_KEY }} --source "github" --skip-duplicate
