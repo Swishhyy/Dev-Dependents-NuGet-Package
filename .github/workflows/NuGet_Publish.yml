@@ -17,7 +17,12 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4.3.1
         with:
-          dotnet-version: 9.x.x
+          dotnet-version: 8.0.x
+      
+      - name: Install Mono
+        run: |
+          sudo apt update
+          sudo apt install -y mono-complete
           
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v2.0.1
@@ -27,7 +32,7 @@ jobs:
       - name: Pack NuGet package
         run: |
           cd Exiled_Dev_References
-          nuget pack Exiled_Dev_References.nuspec -OutputDirectory ../nupkg
+          mono $(which nuget) pack Exiled_Dev_References.nuspec -OutputDirectory ../nupkg
         
       - name: Push to NuGet
         if: github.event_name != 'pull_request'
