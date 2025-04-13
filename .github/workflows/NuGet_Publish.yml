@@ -19,20 +19,24 @@ jobs:
         with:
           dotnet-version: 8.0.x
       
-      - name: Install Mono
-        run: |
-          sudo apt update
-          sudo apt install -y mono-complete
-          
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v2.0.1
-        with:
-          nuget-version: '6.x'
-      
-      - name: Pack NuGet package
+      - name: Create temporary project file
         run: |
           cd Exiled_Dev_References
-          mono $(which nuget) pack Exiled_Dev_References.nuspec -OutputDirectory ../nupkg
+          cat > Exiled_Dev_References.csproj << EOF
+          <Project Sdk="Microsoft.NET.Sdk">
+            <PropertyGroup>
+              <TargetFramework>net45</TargetFramework>
+              <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+              <NuspecFile>Exiled_Dev_References.nuspec</NuspecFile>
+              <PackageOutputPath>../nupkg</PackageOutputPath>
+            </PropertyGroup>
+          </Project>
+          EOF
+      
+      - name: Pack using dotnet
+        run: |
+          cd Exiled_Dev_References
+          dotnet pack -c Release
         
       - name: Push to NuGet
         if: github.event_name != 'pull_request'
