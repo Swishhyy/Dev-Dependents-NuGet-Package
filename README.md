@@ -27,6 +27,7 @@ Once installed, all necessary DLLs will be available to your project. You can th
 This package includes all the necessary DLLs for Exiled development, including:
 
 #### WARNING: (Assembly-CSharp.dll & Assmebly-CSharp-Publicized.dll excluded to avoid conflicts)
+```
 ### Core References
 - Assembly-CSharp-firstpass.dll 
 - BouncyCastle.Cryptography.dll
@@ -139,8 +140,8 @@ This package includes all the necessary DLLs for Exiled development, including:
 ### Other Libraries
 - YamlDotNet.dll
 - zxing.dll
-
-> **Note**: Assembly-CSharp.dll and Assembly-CSharp-Publicized.dll are excluded from the package to avoid conflicts with Exiled's own references. When using this package alongside Exiled, their version of these assemblies will be used.
+```
+> **Note**: Assembly-CSharp.dll and Assembly-CSharp-Publicized.dll are excluded from the package to avoid conflicts with Exiled's references. When using this package alongside Exiled, their version of these assemblies will be used.
 
 ## License
 
