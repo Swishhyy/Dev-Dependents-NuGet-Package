@@ -18,12 +18,7 @@ Or via .NET CLI:
 dotnet add package Exiled.Dev.References
 ```
 
-## Usage
-
-Once installed, all necessary DLLs will be available to your project. You can then start developing your Exiled plugin without needing to manually reference individual dependencies.
-
 ## Included References
-
 This package includes all the necessary DLLs for Exiled development, including:
 ```
 ### Core References
