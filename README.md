@@ -4,12 +4,7 @@ A NuGet package containing all necessary DLLs for Exiled plugin development.
 
 This will be updated based on Exiled's .dll file requirements and other needed libraries. I may additionally add more well known and versatile .dlls (like Newtonsoft and similar projects) due to their constant use and their un-replacable quality. However I will have to check the distribution as ofc i dont want to break any rules 🙏
 
-> **Note**: This is not being used for profit or other means its simply to assist developers that work on the Exiled Framework. Im putting this note to clarify my intentions is all. No profit or donations should or would ever be taken from this project. 
-
-
-## Description
-
-This package provides all the required DLL references for developing plugins for the Exiled framework. Instead of having to manually reference dozens of DLLs in your project, you can simply install this package to get all required dependencies.
+> **Note**: This is not being used for profit or other means its simply to assist developers that work on the Exiled Framework. Im putting this note to clarify my intentions is all. No profit or donations should or would ever be taken from this project. This project is free to edit/change/fork/etc to do all i ask is you credit me for the orginal idea for this.
 
 ## Installation
 
@@ -30,8 +25,6 @@ Once installed, all necessary DLLs will be available to your project. You can th
 ## Included References
 
 This package includes all the necessary DLLs for Exiled development, including:
-
-#### WARNING: (Assembly-CSharp.dll & Assmebly-CSharp-Publicized.dll excluded to avoid conflicts)
 ```
 ### Core References
 - Assembly-CSharp-firstpass.dll 
@@ -146,12 +139,5 @@ This package includes all the necessary DLLs for Exiled development, including:
 - YamlDotNet.dll
 - zxing.dll
 ```
-> **Note**: Assembly-CSharp.dll and Assembly-CSharp-Publicized.dll are excluded from the package to avoid conflicts with Exiled's references. When using this package alongside Exiled, their version of these assemblies will be used.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Author
-
-Swishhyy
+> **Note**: Assembly-CSharp.dll and Assembly-CSharp-Publicized.dll were excluded due to complications of double references or not be able to reference them properly. Hopefully i can find a fix for this but currently as of Exiled v9.5.1 you should be able to use this package and the Exiled package and will work (this is tested on my own public [plugin](https://github.com/Swishhyy/SUP))
