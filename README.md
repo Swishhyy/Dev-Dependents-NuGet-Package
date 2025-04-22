@@ -1,6 +1,11 @@
 # Exiled Dev References
 
-A NuGet package containing all necessary DLLs for Exiled plugin development.
+A NuGet package containing all necessary DLLs for Exiled plugin development. 
+
+This will be updated based on Exiled's .dll file requirements and other needed libraries. I may additionally add more well known and versatile .dlls (like Newtonsoft and similar projects) due to their constant use and their un-replacable quality. However I will have to check the distribution as ofc i dont want to break any rules 🙏
+
+> **Note**: This is not being used for profit or other means its simply to assist developers that work on the Exiled Framework. Im putting this note to clarify my intentions is all. No profit or donations should or would ever be taken from this project. 
+
 
 ## Description
 
